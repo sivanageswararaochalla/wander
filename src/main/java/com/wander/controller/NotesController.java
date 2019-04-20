@@ -82,6 +82,7 @@ public class NotesController {
 		notes.setUser(new User(userId, "", "", "", "", new ArrayList<Notes>()));
 		notes.setUpdated(new Date());
 		notes.setId(notesId);
+		notes.setCreated(notesService.getNotes(notesId).getCreated());
 		notesService.addNote(notes);
 
 		RedirectView rv = new RedirectView();
